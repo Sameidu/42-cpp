@@ -15,8 +15,8 @@ class PhoneBook {
 	public:
 		PhoneBook();
 		~PhoneBook();
-		void addContact(int &nbContacts);
-		void searchContact(int &nbContacts);
+		void addContact();
+		void searchContact();
 };
 
 #endif

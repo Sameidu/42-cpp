@@ -3,7 +3,6 @@
 int	main(void) {
 	PhoneBook phoneBook = PhoneBook();
 	std::string command;
-	int nbContacts = 0;
 
 	std::cout << "Welcome to your phonebook!" << std::endl;
 	while (1) {
@@ -12,18 +11,11 @@ int	main(void) {
 		for (int i = 0; command[i]; i++)
 			command[i] = toupper(command[i]);
 		if (command == "SEARCH")
-			phoneBook.searchContact(nbContacts);
+			phoneBook.searchContact();
 		else if (command == "EXIT") 
 			break;
 		else if (command == "ADD")
-		{
-			if (nbContacts == 8)
-			{
-				nbContacts = 0;
-				std::cout << "Phonebook is full, starting from the beginning" << std::endl;
-			}
-			phoneBook.addContact(nbContacts);
-		}
+			phoneBook.addContact();
 		else
 			std::cout << "Invalid command" << std::endl;
 	}
