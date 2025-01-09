@@ -7,21 +7,21 @@ PhoneBook::~PhoneBook () {}
 void PhoneBook::addContact() {
 	std::string line;
 	
-	if (this->nbContacts == 8) {
+	if (nbContacts == 8) {
 		std::cout << "Phonebook is full, starting from the beginning" << std::endl;
-		this->nbContacts = 0;
+		nbContacts = 0;
 	}
 	while (line.empty()) {
 		std::cout << "Please enter the first name: ";
 		std::getline(std::cin, line);
-		contacts[this->nbContacts].setFirstName(line);
+		contacts[nbContacts].setFirstName(line);
 	}
 	line.clear();
 	while (line.empty()) {
 		std::cout << "Please enter the last name: ";
 		std::getline(std::cin, line);
 		if (!line.empty())
-			contacts[this->nbContacts].setLastName(line);
+			contacts[nbContacts].setLastName(line);
 		else
 			std::cout << "Last name cannot be empty" << std::endl;
 	}
@@ -30,7 +30,7 @@ void PhoneBook::addContact() {
 		std::cout << "Please enter the nickname: ";
 		std::getline(std::cin, line);
 		if (!line.empty())
-			contacts[this->nbContacts].setNickname(line);
+			contacts[nbContacts].setNickname(line);
 		else
 			std::cout << "Nickname cannot be empty" << std::endl;
 	}
@@ -39,7 +39,7 @@ void PhoneBook::addContact() {
 		std::cout << "Please enter the phone number: ";
 		std::getline(std::cin, line);
 		if (!line.empty())
-			contacts[this->nbContacts].setPhone(line);
+			contacts[nbContacts].setPhone(line);
 		else
 			std::cout << "Phone number cannot be empty" << std::endl;
 	}
@@ -48,19 +48,19 @@ void PhoneBook::addContact() {
 		std::cout << "Please enter the darkest secret: ";
 		std::getline(std::cin, line);
 		if (!line.empty())
-			contacts[this->nbContacts].setDarkestSecret(line);
+			contacts[nbContacts].setDarkestSecret(line);
 		else
 			std::cout << "Darkest secret cannot be empty" << std::endl;
 	}
-	this->nbContacts++;
+	nbContacts++;
 	std::cout << "Contact added successfully" << std::endl;
-	std::cout << "Total contacts: " << this->nbContacts << std::endl << std::endl;
+	std::cout << "Total contacts: " << nbContacts << std::endl << std::endl;
 }
 
 void PhoneBook::searchContact() {
 	std::string line;
 
-	if (this->nbContacts == 0) {
+	if (nbContacts == 0) {
 		std::cout << "No contacts available" << std::endl << std::endl;
 		return ;
 	}
@@ -85,7 +85,7 @@ void PhoneBook::searchContact() {
 	std::getline(std::cin, line);
 	if (line.length() == 1 && line[0] >= '1' && line[0] <= '8') {
 		int index = line[0] - '1';
-		if (index > 8 || index < 0 || this->contacts[index].getFirstName().empty()) {
+		if (index > 8 || index < 0 || contacts[index].getFirstName().empty()) {
 			std::cout << "Invalid index" << std::endl << std::endl;
 			return ;
 		}

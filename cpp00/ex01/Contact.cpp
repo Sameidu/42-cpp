@@ -25,21 +25,21 @@ void Contact::setDarkestSecret(std::string darkestSecret) {
 }
 
 std::string Contact::getFirstName() {
-	return (this->firstName);
+	return (firstName);
 }
 
 std::string Contact::getLastName() {
-	return (this->lastName);
+	return (lastName);
 }
 
 std::string Contact::getNickname() {
-	return (this->nickname);
+	return (nickname);
 }
 
 std::string Contact::getPhone() {
-	return (this->phone);
+	return (phone);
 }
 
 std::string Contact::getDarkestSecret() {
-	return (this->darkestSecret);
+	return (darkestSecret);
 }
