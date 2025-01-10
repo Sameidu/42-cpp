@@ -80,15 +80,15 @@ void	Account::displayStatus( void ) const {
 }
 
 void	Account::_displayTimestamp( void ) {
-	std::cout << "[19920104_091532] ";
-	// std::time_t now = std::time(nullptr);
-    // std::tm *localTime = std::localtime(&now);
-    // std::cout << '[' << (localTime->tm_year + 1900)
-    //           << std::setw(2) << std::setfill('0') << (localTime->tm_mon + 1)
-    //           << std::setw(2) << std::setfill('0') << localTime->tm_mday << '_'
-    //           << std::setw(2) << std::setfill('0') << localTime->tm_hour
-    //           << std::setw(2) << std::setfill('0') << localTime->tm_min
-    //           << std::setw(2) << std::setfill('0') << localTime->tm_sec << "] ";
+	// std::cout << "[19920104_091532] ";
+	std::time_t now = std::time(nullptr);
+    std::tm *localTime = std::localtime(&now);
+    std::cout << '[' << (localTime->tm_year + 1900)
+              << std::setw(2) << std::setfill('0') << (localTime->tm_mon + 1)
+              << std::setw(2) << std::setfill('0') << localTime->tm_mday << '_'
+              << std::setw(2) << std::setfill('0') << localTime->tm_hour
+              << std::setw(2) << std::setfill('0') << localTime->tm_min
+              << std::setw(2) << std::setfill('0') << localTime->tm_sec << "] ";
 }
 
 int		Account::checkAmount( void ) const {
