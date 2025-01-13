@@ -1,5 +1,5 @@
-NAME	=	 
-SRC		=	
+NAME	=	zombie4
+SRC		=	main.cpp
 CPP		=	c++
 CPPFLAG	=	-Wall -Wextra -Werror -std=c++98
 OBJ		=	$(SRC:.cpp=.o)
