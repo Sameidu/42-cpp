@@ -14,11 +14,11 @@ void HumanA::setWeapon ( Weapon &weapon ) {
 	this->_weapon = weapon;
 }
 
-std::string HumanA::getName () {
+std::string HumanA::getName () const {
 	return this->_name;
 }
 
-std::string HumanA::getWeapon () {
+std::string HumanA::getWeapon () const {
 	return this->_weapon.getType();
 }
 

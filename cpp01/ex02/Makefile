@@ -1,4 +1,4 @@
-NAME	=	zombie2
+NAME	=	brain
 SRC		=	main.cpp
 CPP		=	c++
 CPPFLAG	=	-Wall -Wextra -Werror -std=c++98

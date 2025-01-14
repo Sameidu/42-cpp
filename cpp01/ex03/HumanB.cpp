@@ -16,11 +16,11 @@ void HumanB::setWeapon ( Weapon &weapon ) {
 	this->_weapon = &weapon;
 };
 
-std::string HumanB::getName () {
+std::string HumanB::getName () const {
 	return this->_name;
 }
 
-std::string HumanB::getWeapon () {
+std::string HumanB::getWeapon () const {
 	return this->_weapon->getType();
 }
 

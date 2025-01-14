@@ -1,4 +1,4 @@
-NAME	=	zombie4
+NAME	=	replace
 SRC		=	main.cpp
 CPP		=	c++
 CPPFLAG	=	-Wall -Wextra -Werror -std=c++98

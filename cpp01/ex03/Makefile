@@ -1,4 +1,4 @@
-NAME	=	zombie3
+NAME	=	human
 SRC		=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 CPP		=	c++
 CPPFLAG	=	-Wall -Wextra -Werror -std=c++98
