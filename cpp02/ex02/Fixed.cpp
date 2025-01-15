@@ -23,11 +23,28 @@ Fixed &Fixed::operator=(Fixed const &copy) {
 	return *this;
 }
 
+Fixed::Fixed (int const value) {
+	std::cout << "Int constructor called" << std::endl;
+	this->_value = value << this->_fBits;
+}
+
+Fixed::Fixed (float const value) {
+	std::cout << "Float constructor called" << std::endl;
+	this->_value = std::roundf(value * (1 << this->_fBits));
+}
+
 int Fixed::getRawBits(void) const {
-	std::cout << "getRawBits member function called" << std::endl;
 	return this->_value;
 }
 
 void Fixed::setRawBits(int const raw) {
 	this->_value = raw;
+}
+
+float Fixed::toFloat(void) const {
+	return (float)this->_value / (1 << this->_fBits);
+}
+
+int Fixed::toInt(void) const {
+	return this->_value >> this->_fBits;
 }

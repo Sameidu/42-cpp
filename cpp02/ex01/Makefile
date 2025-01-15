@@ -1,5 +1,5 @@
-NAME	=	 
-SRC		=	
+NAME	=	convert
+SRC		=	main.cpp Fixed.cpp
 CPP		=	c++
 CPPFLAG	=	-Wall -Wextra -Werror -std=c++98
 OBJ		=	$(SRC:.cpp=.o)
