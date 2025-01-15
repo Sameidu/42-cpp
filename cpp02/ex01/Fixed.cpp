@@ -2,6 +2,7 @@
 
 const int Fixed::_fBits = 8;
 
+/* Constructors & destructor */
 Fixed::Fixed () : _value(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
@@ -15,6 +16,18 @@ Fixed::Fixed (Fixed const &copy) {
 	*this = copy;
 }
 
+Fixed::Fixed (int const value) {
+	std::cout << "Int constructor called" << std::endl;
+	this->_value = value << this->_fBits;
+}
+
+Fixed::Fixed (float const value) {
+	std::cout << "Float constructor called" << std::endl;
+	this->_value = roundf(value * (1 << this->_fBits));
+}
+
+/* Copy assignation operator */
+
 Fixed &Fixed::operator=(Fixed const &copy) {
 	if (this == &copy)
 		return *this;
@@ -23,16 +36,13 @@ Fixed &Fixed::operator=(Fixed const &copy) {
 	return *this;
 }
 
-Fixed::Fixed (int const value) {
-	std::cout << "Int constructor called" << std::endl;
-	this->_value = value << this->_fBits;
+/* Overload operator */
+std::ostream& operator<<(std::ostream& out, Fixed const& obj) {
+	out << obj.toFloat();
+	return out;
 }
 
-Fixed::Fixed (float const value) {
-	std::cout << "Float constructor called" << std::endl;
-	this->_value = std::roundf(value * (1 << this->_fBits));
-}
-
+/* Getters & setters */
 int Fixed::getRawBits(void) const {
 	return this->_value;
 }
@@ -41,6 +51,7 @@ void Fixed::setRawBits(int const raw) {
 	this->_value = raw;
 }
 
+/* Conversion de tipos */
 float Fixed::toFloat(void) const {
 	return (float)this->_value / (1 << this->_fBits);
 }

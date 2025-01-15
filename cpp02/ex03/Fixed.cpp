@@ -1,4 +1,5 @@
 #include "Fixed.hpp"
+#include <cmath>
 
 const int Fixed::_fBits = 8;
 

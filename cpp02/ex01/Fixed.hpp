@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <ostream>
 
 class Fixed {
 	private: 
@@ -24,5 +25,7 @@ class Fixed {
 		int toInt(void) const;
 
 };
+
+std::ostream& operator<<(std::ostream& out, Fixed const& obj);
 
 #endif
