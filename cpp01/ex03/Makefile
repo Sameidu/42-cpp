@@ -1,11 +1,11 @@
-NAME	=	human
-SRC		=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
-CPP		=	c++
-CPPFLAG	=	-Wall -Wextra -Werror -std=c++98
-OBJ		=	$(SRC:.cpp=.o)
+NAME		=	human
+SRC			=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+CPP			=	c++
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
+OBJ			=	$(SRC:.cpp=.o)
 
 $(NAME):	$(OBJ)
-	$(CPP) $(CPPFLAG) -o $(NAME) $(OBJ)
+	$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJ)
 
 all:	$(NAME)
 
