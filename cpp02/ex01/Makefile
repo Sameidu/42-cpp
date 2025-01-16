@@ -1,7 +1,7 @@
 NAME		=	fixed
 SRC			=	main.cpp Fixed.cpp
 CPP			=	c++
-CPPFLAGSS	=	-Wall -Wextra -Werror -std=c++98
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 OBJ			=	$(SRC:.cpp=.o)
 
 $(NAME):	$(OBJ)

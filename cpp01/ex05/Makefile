@@ -1,8 +1,8 @@
-NAME	=	harl
-SRC		=	main.cpp Harl.cpp
-CPP		=	c++
+NAME		=	harl
+SRC			=	main.cpp Harl.cpp
+CPP			=	c++
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
-OBJ		=	$(SRC:.cpp=.o)
+OBJ			=	$(SRC:.cpp=.o)
 
 $(NAME):	$(OBJ)
 	$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJ)

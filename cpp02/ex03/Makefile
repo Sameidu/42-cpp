@@ -1,11 +1,11 @@
 NAME		=	bsp
 SRC			=	main.cpp Fixed.cpp Point.cpp bsp.cpp
 CPP			=	c++
-CPPFLAGSS	=	-Wall -Wextra -Werror -std=c++98
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 OBJ			=	$(SRC:.cpp=.o)
 
 $(NAME):	$(OBJ)
-	$(CPP) $(CPPFLAGSS) -o $(NAME) $(OBJ)
+	$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJ)
 
 all:	$(NAME)
 

@@ -4,24 +4,23 @@
 
 int main ( void ) {
 	{
-		Point a(7 , 3);
-		Point b (2 , 6);
-		Point c (1 , 5);
-		
+		Point a(0 , 0);
+		Point b (0 , 10);
+		Point c (10 , 0);
+
+		// Puntos dentro del triangulo
+		Point p1 (1, 1);
+		Point p2 (5, 5);
+		Point p3 (1, 5);
+		Point p4 (5, 1);
+		Point p5 (3, 3);
+
 		// // Puntos fuera del triangulo
-		// Point p1(0, 0);  // Muy lejos, fuera del área del triángulo
-        // Point p2(8, 7);  // Al exterior, más allá de los límites de los vértices
-        // Point p3(3, 7);  // Arriba y fuera del triángulo
-        // Point p4(7, 2);  // Cerca de un vértice, pero fuera del triángulo
-        // Point p5(1, 4);  // Muy cerca de un lado, pero fuera
-
-
-        // Puntos dentro del triángulo
-        Point p1(3, 5);  // Cerca del lado b -> c
-        Point p2(5, 4);  // Cerca del centro del triángulo
-        Point p3(6, 4);  // Cerca del lado a -> b
-        Point p4(2.5, 5.5);  // Cerca del vértice b
-        Point p5(4, 5);  // Cerca del lado a -> c
+		// Point p1 (11, 11);
+		// Point p2 (11, 5);
+		// Point p3 (5, 11);
+		// Point p4 (-1, -1);
+		// Point p5 (-1, 5);
 
 		std::cout << a << std::endl;
 		std::cout << b << std::endl;

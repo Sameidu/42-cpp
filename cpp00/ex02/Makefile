@@ -1,6 +1,5 @@
 NAME		=	account
-SRC			=	Account.cpp \
-				main.cpp
+SRC			=	Account.cpp main.cpp
 CPP			=	c++
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 OBJ			=	$(SRC:.cpp=.o)
