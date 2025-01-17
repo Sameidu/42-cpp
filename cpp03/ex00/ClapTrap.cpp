@@ -28,6 +28,14 @@ ClapTrap& ClapTrap::operator= (const ClapTrap& other ) {
 	return *this;
 }
 
+void ClapTrap::setName ( const std::string& name ) {
+	this->_name = name;
+}
+
+std::string ClapTrap::getName ( void ) const {
+	return this->_name;
+}
+
 void ClapTrap::attack ( const std::string& target ) {
 	if (_energyPoints > 0)
 	{
@@ -50,7 +58,7 @@ void ClapTrap::takeDamage ( unsigned int amount ) {
 			  << " points of damage!" << std::endl;
 	}
 	else
-		std::cout << "ClapTrap: " << _name << " dodge the attack! (Or maybe dead)" << std::endl;
+		std::cout << "ClapTrap: " << _name << " dodge the attack! (Or maybe is dead)" << std::endl;
 }
 
 void ClapTrap::beRepaired ( unsigned int amount ) {

@@ -1,8 +1,8 @@
-NAME	=	claptrap
-SRC		=	main.cpp ClapTrap.cpp
-CPP		=	c++
+NAME		=	claptrap
+SRC			=	main.cpp ClapTrap.cpp
+CPP			=	c++
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
-OBJ		=	$(SRC:.cpp=.o)
+OBJ			=	$(SRC:.cpp=.o)
 
 $(NAME):	$(OBJ)
 	$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJ)
