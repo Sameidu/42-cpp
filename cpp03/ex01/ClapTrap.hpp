@@ -26,8 +26,4 @@ class ClapTrap {
 		void beRepaired ( unsigned int amount );
 };
 
-class FracTrap: public ClapTrap {
-
-};
-
 #endif
