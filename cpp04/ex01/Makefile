@@ -1,7 +1,7 @@
-NAME	=	 
-SRC		=	
+NAME	=	brain
+SRC		=	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 CPP		=	c++
-CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
 OBJ		=	$(SRC:.cpp=.o)
 
 $(NAME):	$(OBJ)
