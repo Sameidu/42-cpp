@@ -1,5 +1,5 @@
 NAME	=	materia
-SRC		=	main.cpp IMateriaSource.cpp AMateria.cpp ICharacter.cpp
+SRC		=	main.cpp MateriaSource.cpp AMateria.cpp Character.cpp Ice.cpp Cure.cpp
 CPP		=	c++
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 OBJ		=	$(SRC:.cpp=.o)
