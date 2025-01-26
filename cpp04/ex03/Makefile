@@ -1,8 +1,8 @@
-NAME	=	materia
-SRC		=	main.cpp MateriaSource.cpp AMateria.cpp Character.cpp Ice.cpp Cure.cpp
-CPP		=	c++
-CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
-OBJ		=	$(SRC:.cpp=.o)
+NAME		=	materia
+SRC			=	main.cpp MateriaSource.cpp AMateria.cpp Character.cpp Ice.cpp Cure.cpp
+CPP			=	c++
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
+OBJ			=	$(SRC:.cpp=.o)
 
 $(NAME):	$(OBJ)
 	$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJ)

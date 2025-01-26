@@ -9,14 +9,18 @@
 #include "IMateriaSource.hpp"
 
 class MateriaSource: public IMateriaSource {
-	private:
-
 	protected:
-
+		AMateria *_materia[4];
+		
 	public:
-	~MateriaSource();
-	void learnMateria(AMateria*);
-	AMateria* createMateria(std::string const & type);
+		MateriaSource();
+		~MateriaSource();
+		MateriaSource (const MateriaSource &other);
+
+		MateriaSource &operator= (const MateriaSource &toher);
+
+		void learnMateria(AMateria*);
+		AMateria* createMateria(std::string const & type);
 };
 
 #endif

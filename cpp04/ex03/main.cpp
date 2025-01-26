@@ -13,6 +13,7 @@ int main() {
 
 	ICharacter* me = new Character("me");
 	AMateria* tmp;
+	(void)tmp;
 
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
