@@ -1,11 +1,11 @@
 NAME		=	harlFilter
 SRC			=	main.cpp Harl.cpp
-CPP			=	c++
+CXX			=	c++
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 OBJ			=	$(SRC:.cpp=.o)
 
 $(NAME):	$(OBJ)
-	$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJ)
+	$(CXX) $(CPPFLAGS) -o $(NAME) $(OBJ)
 
 all:	$(NAME)
 

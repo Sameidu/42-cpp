@@ -5,8 +5,6 @@
 
 #include "Account.hpp"
 
-Account::Account () {};
-
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
@@ -81,7 +79,7 @@ void	Account::displayStatus( void ) const {
 
 void	Account::_displayTimestamp( void ) {
 	// std::cout << "[19920104_091532] ";
-	std::time_t now = std::time(nullptr);
+	std::time_t now = std::time(NULL);
     std::tm *localTime = std::localtime(&now);
     std::cout << '[' << (localTime->tm_year + 1900)
               << std::setw(2) << std::setfill('0') << (localTime->tm_mon + 1)

@@ -1,11 +1,11 @@
 NAME		=	diamondtrap
 SRC			=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
-CPP			=	c++
+CXX			=	c++
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 OBJ			=	$(SRC:.cpp=.o)
 
 $(NAME):	$(OBJ)
-	$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJ)
+	$(CXX) $(CPPFLAGS) -o $(NAME) $(OBJ)
 
 all:	$(NAME)
 
