@@ -55,7 +55,7 @@ void Character::unequip (int idx) {
 }
 
 void Character::use (int idx, ICharacter &target) {
-	if (this->_inventory[idx] != NULL)
+	if (this->_inventory[idx] != NULL && idx < 4)
 		this->_inventory[idx]->use(target);
 	else
 		std::cout << "No materia in slot " << idx << std::endl;
