@@ -9,7 +9,8 @@ Cat::Cat () : Animal() {
 
 Cat::~Cat () {
 	std::cout << "Cat destructor called" << std::endl;
-	delete _brain;
+	if (_brain)
+		delete _brain;
 }
 
 Cat::Cat (const Cat &other) : Animal() {
@@ -22,6 +23,7 @@ Cat &Cat::operator= (const Cat &other) {
 	if (this == &other)
 		return *this;
 	_type = other._type;
+	_brain = new Brain(*other._brain);
 	_sound = other._sound;
 	return *this;
 }

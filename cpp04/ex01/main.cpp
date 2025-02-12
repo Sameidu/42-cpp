@@ -19,6 +19,11 @@ int main() {
 		std::cout << "Puppy: " << puppy->getBrain()->getIdea(i) << std::endl;
 	}
 
+	Cat siames = *kitty;
+
+	siames.makeSound();
+	std::cout << "siames> " << siames.getBrain()->getIdea(13) << std::endl;
+
 	delete puppy;
 	delete kitty;
 

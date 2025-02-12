@@ -9,7 +9,8 @@ Dog::Dog () : Animal() {
 
 Dog::~Dog () {
 	std::cout << "Dog destructor called" << std::endl;
-	delete _brain;
+	if (_brain)
+		delete _brain;
 }
 
 Dog::Dog (const Dog &other) {
@@ -22,6 +23,7 @@ Dog &Dog::operator= (const Dog &other) {
 	if (this == &other)
 		return *this;
 	_type = other._type;
+	_brain = new Brain(*other._brain);
 	_sound = other._sound;
 	return *this;
 }
