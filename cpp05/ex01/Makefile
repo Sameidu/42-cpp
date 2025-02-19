@@ -1,8 +1,8 @@
-NAME	=	 
-SRC		=	
-CXX		=	c++
+NAME		=	form
+SRC			=	Bureaucrat.cpp main.cpp Form.cpp
+CXX			=	c++
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
-OBJ		=	$(SRC:.cpp=.o)
+OBJ			=	$(SRC:.cpp=.o)
 
 $(NAME):	$(OBJ)
 	$(CXX) $(CPPFLAGS) -o $(NAME) $(OBJ)

@@ -6,8 +6,40 @@ int	main() {
 		std::cout << Bob << std::endl;
 		Bob.gradeDecrement();
 		std::cout << Bob << std::endl;
+		Bob.gradeDecrement();
+		std::cout << Bob << std::endl;
 	}
-	catch (const char *e) {
-		std::cerr << e << std::endl;
+	catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+	
+	try {
+		Bureaucrat Bob("Bob", 2);
+		std::cout << Bob << std::endl;
+		Bob.gradeIncrement();
+		std::cout << Bob << std::endl;
+		Bob.gradeIncrement();
+		std::cout << Bob << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+
+	try {
+		int grade = 189;
+		Bureaucrat Bob("Bob", grade);
+		std::cout << Bob << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+
+	try {
+		int grade = 0;
+		Bureaucrat Bob("Bob", grade);
+		std::cout << Bob << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
 	}
 }

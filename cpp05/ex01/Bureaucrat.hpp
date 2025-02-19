@@ -7,6 +7,9 @@
 #include <string>
 #include <iomanip>
 #include <exception>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 	private:
@@ -23,6 +26,7 @@ class Bureaucrat {
 
 		void	gradeIncrement();
 		void	gradeDecrement();
+		void	signForm(Form &form);
 
 		class GradeTooHighException : public std::exception {
 			public:
