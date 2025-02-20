@@ -48,9 +48,9 @@ void Bureaucrat::gradeDecrement() {
 	_grade++;
 }
 
-void Bureaucrat::signForm(Form &form) {
+void Bureaucrat::signForm(AForm &form) {
 	if (form.getSigned() == true)
-		throw Form::FormAlreadySignedException();
+		throw AForm::FormAlreadySignedException();
 	else if (_grade < form.getGradeToSign())
 	{
 		form.beSigned(*this); 
@@ -58,6 +58,16 @@ void Bureaucrat::signForm(Form &form) {
 	}
 	else
 		throw Bureaucrat::GradeTooLowException();
+}
+
+void Bureaucrat::executeForm(AForm const &form) {
+	try {
+		std::cout << _name << " executes " << form.getName() << std::endl;
+		form.execute(*this);
+	}
+	catch (std::exception &e) {
+		std::cout << _name << " cannot execute " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {

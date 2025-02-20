@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AForm_HPP
+#define AForm_HPP
 
 #include <iostream>
 #include <string>
@@ -11,7 +11,7 @@
 
 class Bureaucrat;
 
-class Form {
+class AForm {
 	private:
 		std::string const _name;
 		bool _signed;
@@ -19,12 +19,12 @@ class Form {
 		int const _exec;
 
 	public:
-		Form();
-		~Form();
-		Form(std::string name, int gradeToSign, int gradeToExec);
-		Form(Form const &other);
+		AForm();
+		virtual ~AForm();
+		AForm(std::string name, int gradeToSign, int gradeToExec);
+		AForm(AForm const &other);
 
-		Form &operator=(const Form &other);
+		AForm &operator=(const AForm &other);
 
 		std::string getName() const;
 		bool getSigned() const;
@@ -52,8 +52,9 @@ class Form {
 		};
 
 		void beSigned(Bureaucrat &bureaucrat);
+		virtual void execute(Bureaucrat const &executor) const = 0;
 };
 
-std::ostream &operator<<(std::ostream &out, Form const &form);
+std::ostream &operator<<(std::ostream &out, AForm const &AForm);
 
 #endif
