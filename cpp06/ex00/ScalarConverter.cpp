@@ -18,7 +18,7 @@ ScalarConverter &ScalarConverter::operator=(ScalarConverter const &other) {
 }
 
 int searchConversion(std::string input) {
-	if (input.length() == 1 && !isdigit(input[0]))
+	if (input.length() == 1 && !std::isdigit(input[0]))
 		return 0;
 	if (input == "nan" || input == "nanf" || input == "+inf" || input == "+inff" || input == "-inf" || input == "-inff")
 		return 4;
@@ -28,19 +28,19 @@ int searchConversion(std::string input) {
 
 	if (input[i] == '-' || input[i] == '+')
 		i++;
-	if (!isdigit(input[i]))
+	if (!std::isdigit(input[i]))
 		return -1;
-	while (isdigit(input[i]))
+	while (std::isdigit(input[i]))
 		i++;
 	if (input[i] == '.') {
 		dot++;
 		i++;
-		while (isdigit(input[i]))
+		while (std::isdigit(input[i]))
 			i++;
 	}
 	if (!input[i] && input[i - 1] != '.')
 		return (dot == 0) ? 1 : 3;
-	if (input[i] == 'f' && !input[i + 1] && dot == 1 && isdigit(input[i - 1]))
+	if (input[i] == 'f' && !input[i + 1] && dot == 1 && std::isdigit(input[i - 1]))
 		return 2;
 	return -1;
 }
@@ -50,7 +50,7 @@ void convertChar(std::string const &input) {
 	char convert = input[0];
 
 	std::cout << "char: ";
-	if (isprint(convert))
+	if (std::isprint(convert))
 		std::cout << "'" << convert << "'" << std::endl;
 	else
 		std::cout << "Non displayable" << std::endl;
@@ -64,7 +64,7 @@ void convertInt(std::string const &input) {
 
 	std::cout << "INT_CONVERT" << std::endl;
 	std::cout << "char: ";
-	if (isprint(convert))
+	if (std::isprint(convert))
 		std::cout << "'" << static_cast<char>(convert) << "'" << std::endl;
 	else
 		std::cout << "Non displayable" << std::endl;
@@ -78,7 +78,7 @@ void convertFloat(std::string const &input) {
 
 	std::cout << "FLOAT_CONVERT" << std::endl;
 	std::cout << "char: ";
-	if (isprint(convert))
+	if (std::isprint(convert))
 		std::cout << "'" << static_cast<char>(convert) << "'" << std::endl;
 	else
 		std::cout << "Non displayable" << std::endl;
@@ -92,7 +92,7 @@ void convertDouble(std::string const &input) {
 
 	std::cout << "DOUBLE_CONVERT" << std::endl;
 	std::cout << "char: ";
-	if (isprint(convert))
+	if (std::isprint(convert))
 		std::cout << "'" << static_cast<char>(convert) << "'" << std::endl;
 	else
 		std::cout << "Non displayable" << std::endl;
