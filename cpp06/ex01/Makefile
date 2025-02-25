@@ -1,6 +1,6 @@
-NAME	=	 
-SRC		=	
-CXX		=	c++
+NAME		=	serialize
+SRC			=	main.cpp Serializer.cpp Data.cpp
+CXX			=	c++
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 OBJ		=	$(SRC:.cpp=.o)
 
