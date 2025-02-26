@@ -5,8 +5,8 @@
 
 #include <iostream>
 
-template <typename T, typename F>
-void iter(T *array, size_t len, F f) {
+template <typename T>
+void iter(T *array, size_t len, void (*f)(T&)) {
 	if (!array || !f) {
 		std::cerr << "Error: invalid array or function pointer" << std::endl;
 		return;
