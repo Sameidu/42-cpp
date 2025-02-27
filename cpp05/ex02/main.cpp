@@ -19,7 +19,7 @@ int	main() {
 	try {
 		Bureaucrat Jim("Jim", 13);
 		std::cout << Jim << std::endl;
-		RobotomyRequestForm form("Robot");
+		RobotomyRequestForm form("Claptrap");
 		Jim.executeForm(form);
 		Jim.signForm(form);
 		Jim.executeForm(form);

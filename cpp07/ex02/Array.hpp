@@ -19,10 +19,15 @@ class Array {
 		Array(unsigned int size);
 		Array(const Array &other);
 
-		Array &operator=(const Array &other);
-		Array &operator[](unsigned int index);
+		T &operator=(const Array &other);
+		T &operator[](int index);
 
 		unsigned int size() const;
+
+		class OutOfRange : public std::exception {
+			public:
+				virtual const char *what() const throw();
+		};
 };
 
 #include "Array.tpp"

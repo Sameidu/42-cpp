@@ -38,22 +38,23 @@ void talk(Uwu &uwu) {
 }
 
 template <typename T>
-void print(T &x) {
+void print(const T& x) {
 	std::cout << x << std::endl;
 }
 
 int main() {
-	std::string strarr[] = {"si", "no", "hola", "adios", "que", "tal", "uwu"};
-	::iter(strarr, 7, &print);
+	std::string strarr[] = {"si", "no", "hola", "adios", "uwu"};
+	iter(strarr, 5, print);
 
 	int intarr[] = {1, 2, 3, 4, 5};
-	::iter(intarr, 5, &print);
+	iter(intarr, 5, print<const int>);
+	iter(intarr, 5, print);
 
-	::iter((int*)NULL, 9, &print);
+	iter((int*)NULL, 9, &print);
 
-	Uwu *uwuarr = new Uwu[10];
-	::iter(uwuarr, 10, setN);
-	::iter(uwuarr, 10, talk);
+	Uwu *uwuarr = new Uwu[5];
+	iter(uwuarr, 5, setN);
+	iter(uwuarr, 5, talk);
 	delete[] uwuarr;
 
 	return 0;

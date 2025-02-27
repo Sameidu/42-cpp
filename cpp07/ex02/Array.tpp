@@ -1,7 +1,7 @@
 #include "Array.hpp"
 
 template <typename T>
-Array<T>::Array() : _obj(new T[0]), _size(0) {};
+Array<T>::Array() : _obj(NULL), _size(0) {};
 
 template <typename T>
 Array<T>::~Array() { delete [] _obj; };
@@ -16,7 +16,7 @@ Array<T>::Array(const Array &other) : _obj(new T[other._size]), _size(other._siz
 };
 
 template <typename T>
-Array<T>&Array<T>::operator=(const Array &other) {
+T& Array<T>::operator=(const Array &other) {
 	if (this == &other)
 		return *this;
 	delete [] _obj;
@@ -28,11 +28,16 @@ Array<T>&Array<T>::operator=(const Array &other) {
 };
 
 template <typename T>
-Array<T>&Array<T>::operator[](unsigned int index) {
-	if (index > _size)
-		throw std::cout << "Out of range access" << std::endl;
+T& Array<T>::operator[](int index) {
+	if (index >= (int)_size || index < 0)
+		throw OutOfRange();
 	return _obj[index];
 };
 
 template <typename T>
 unsigned int Array<T>::size() const { return (_size); };
+
+template <typename T>
+const char *Array<T>::OutOfRange::what() const throw() {
+	return "Out of range access";
+}
