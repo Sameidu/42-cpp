@@ -1,14 +1,18 @@
 #include "Array.hpp"
+#include <sstream>
 
 int main() {
 	std::cout << "===== Let's test the Array class =====" << std::endl;
 	try {
+		std::ostringstream oss;
 		std::cout << "========================= TEST ACCESS OUT OF RANGE =========================" << std::endl;
 		std::cout << "Now we will create an array of 7 strings and attemp an invalid access" << std::endl;
 		Array <std::string> si(7);
 		std::cout << "Size of array: " << si.size() << std::endl;
 		for (size_t i = 0; i < si.size(); i++) {
-			si[i] = "String number " + std::to_string(i);
+			oss.str("");
+			oss << i + 1;
+			si[i] = "String number " + oss.str();
 			std::cout << si[i] << std::endl;
 		}
 		std::cout << "This is a valid access si[6]: " << si[6] << std::endl;
