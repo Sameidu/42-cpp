@@ -1,8 +1,8 @@
-NAME	=	 
-SRC		=	
-CXX		=	c++
+NAME		=	span
+SRC			=	main.cpp Span.cpp
+CXX			=	c++
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
-OBJ		=	$(SRC:.cpp=.o)
+OBJ			=	$(SRC:.cpp=.o)
 
 $(NAME):	$(OBJ)
 	$(CXX) $(CPPFLAGS) -o $(NAME) $(OBJ)
