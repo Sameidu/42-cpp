@@ -12,7 +12,7 @@ BitcoinExchange::BitcoinExchange() {
 			float value = setValue(line);
 			_data[key] = value;
 		} catch (std::exception &e) {
-			std::cerr << e.what() << std::endl;
+			std::cout << e.what() << std::endl;
 		}
 	}
 	infile.close();
@@ -91,7 +91,7 @@ void BitcoinExchange::run(const std::string &file) {
 			std::cout << key << "=> " << value << " = " << value * it->second << std::endl;
 
 		} catch (std::exception &e) {
-			std::cerr << e.what() << std::endl;
+			std::cout << e.what() << std::endl;
 		}
 	}
 	infile.close();
