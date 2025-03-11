@@ -2,7 +2,7 @@
 
 int main (int ac, char **av) {
 	if (ac < 2) {
-		std::cout << "Usage: " << av[0] << " [file1] [file2] ..." << std::endl;
+		std::cout << "Usage: " << av[0] << "Positive number list" << std::endl;
 		return 1;
 	}
 	try {

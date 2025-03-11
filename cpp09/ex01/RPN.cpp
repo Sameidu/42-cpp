@@ -7,7 +7,8 @@ RPN::~RPN() {}
 RPN::RPN(const RPN &other) { *this = other; }
 
 RPN &RPN::operator=(const RPN &other) {
-	(void)other;
+	if (this != &other)
+		_stack = other._stack;
 	return *this;
 }
 
@@ -52,7 +53,7 @@ void	RPN::operate(const char &op) {
 	else if (op == '*')
 		_stack.push(b * a);
 	else if (op == '/') {
-		if (a == 0 || b == 0)
+		if (a == 0)
 			throw std::invalid_argument("Division by zero");
 		_stack.push(b / a);
 	}
