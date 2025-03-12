@@ -18,7 +18,7 @@ class PmergeMe {
 	private:
 		std::vector<int> _v;
 		std::deque<int> _d;
-		std::list<int> _l;
+		int _size;
 		PmergeMe();
 
 	public:
@@ -28,6 +28,9 @@ class PmergeMe {
 		PmergeMe &operator=(const PmergeMe &other);
 
 		void merge();
+
+		template <typename T> void fordJohnson(T &container, clock_t &time);
+		template <typename T> void printMessage(T &container, char c);		
 };
 
 #endif

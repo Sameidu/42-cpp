@@ -6,8 +6,8 @@ int main (int ac, char **av) {
 		return 1;
 	}
 	try {
-		PmergeMe pmergeMe(av + 1, ac - 1);
-		pmergeMe.merge();
+		PmergeMe pm(av + 1, ac - 1);
+		pm.merge();
 	} catch (std::exception & e) {
 		std::cerr << e.what() << std::endl;
 		return 1;
