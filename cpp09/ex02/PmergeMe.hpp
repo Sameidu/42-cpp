@@ -8,29 +8,31 @@
 #include <iomanip>
 #include <algorithm>
 #include <vector>
+#include <set>
 #include <deque>
 #include <list>
 #include <iterator>
 #include <exception>
 #include <sstream>
 
+template <typename T, template <typename, typename> class C>
 class PmergeMe {
 	private:
-		std::vector<int> _v;
-		std::deque<int> _d;
 		int _size;
+		int _odd;
+		C<std::pair<T, T>, std::allocator<std::pair<T, T> > > _data;
 		PmergeMe();
 
 	public:
-		~PmergeMe();
+		//~PmergeMe();
 		PmergeMe(char **av, int ac);
 		PmergeMe(const PmergeMe &other);
 		PmergeMe &operator=(const PmergeMe &other);
 
-		void merge();
-
-		template <typename T> void fordJohnson(T &container, clock_t &time);
-		template <typename T> void printMessage(T &container, char c);		
+		void sort();
+		void printPair() const;
 };
+
+#include "PmergeMe.tpp"
 
 #endif

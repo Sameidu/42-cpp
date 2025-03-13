@@ -6,8 +6,10 @@ int main (int ac, char **av) {
 		return 1;
 	}
 	try {
-		PmergeMe pm(av + 1, ac - 1);
-		pm.merge();
+		PmergeMe<int, std::vector> pmv(av + 1, ac - 1);
+		PmergeMe<int, std::deque> pmd(av + 1, ac - 1);
+		pmv.sort();
+		pmd.sort();
 	} catch (std::exception & e) {
 		std::cerr << e.what() << std::endl;
 		return 1;
