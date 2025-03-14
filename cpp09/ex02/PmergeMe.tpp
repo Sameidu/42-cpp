@@ -4,6 +4,9 @@ template <typename T, template <typename, typename> class C>
 PmergeMe<T, C>::PmergeMe() : _size(0) {}
 
 template <typename T, template <typename, typename> class C>
+PmergeMe<T, C>::~PmergeMe() {}
+
+template <typename T, template <typename, typename> class C>
 PmergeMe<T, C>::PmergeMe(const PmergeMe &other) { *this = other; }
 
 template <typename T, template <typename, typename> class C>
@@ -65,23 +68,42 @@ PmergeMe<T, C>::PmergeMe(char **av, int ac) : _size(0), _odd(0) {
 			_data.push_back(std::make_pair(v[i + 1], v[i]));
 	}
 
-	printPair();
+	printPair(this->_data);
 }
 
 template <typename T, template <typename, typename> class C>
 void PmergeMe<T, C>::sort() {
 
+	if (_odd && _data.size() <= 1) {
 
-	std::cout << "After merging: ";
-	printPair();
+	}
+
+	PmergeMe<T, C> first;
+	PmergeMe<T, C> second;
+
+	for (size_t i = 0; i < _data.size(); i++) {
+		if (i < _data.size() / 2)
+			first._data.push_back(_data[i]);
+		else
+			second._data.push_back(_data[i]);
+	}
+
+	std::cout << "First numbers of the pairs: ";
+	printPair(first._data);
+	std::cout << "Second numbers of the pairs: ";
+	printPair(second._data);
+
+	PmergeMe<T, C> sortedPairs;
+
+
 }
 
 template <typename T,  template <typename, typename> class C>
-void PmergeMe<T, C>::printPair() const {
+void PmergeMe<T, C>::printPair(const C<std::pair<T, T>, std::allocator<std::pair<T, T> > > &data) const {
 	std::cout << "Data contains " << _size << " elements" << std::endl;
-	for (size_t i = 0; i < _data.size(); i++)
-		std::cout << "[" << _data[i].first << " " << _data[i].second << "] ";
+	for (size_t i = 0; i < data.size(); i++)
+		std::cout << "[" << data[i].first << " " << data[i].second << "] ";
 	if (_odd)
-		std::cout << "[" <<_odd << "]";
+		std::cout << "[" << _odd << "]";
 	std::cout << std::endl;
 }

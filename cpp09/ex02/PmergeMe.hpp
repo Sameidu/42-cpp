@@ -10,7 +10,6 @@
 #include <vector>
 #include <set>
 #include <deque>
-#include <list>
 #include <iterator>
 #include <exception>
 #include <sstream>
@@ -21,16 +20,16 @@ class PmergeMe {
 		int _size;
 		int _odd;
 		C<std::pair<T, T>, std::allocator<std::pair<T, T> > > _data;
-		PmergeMe();
 
 	public:
-		//~PmergeMe();
+		PmergeMe();
+		~PmergeMe();
 		PmergeMe(char **av, int ac);
 		PmergeMe(const PmergeMe &other);
 		PmergeMe &operator=(const PmergeMe &other);
 
 		void sort();
-		void printPair() const;
+		void printPair(const C<std::pair<T, T>, std::allocator<std::pair<T, T> > > &data) const;
 };
 
 #include "PmergeMe.tpp"
