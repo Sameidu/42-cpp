@@ -13,12 +13,14 @@
 #include <iterator>
 #include <exception>
 #include <sstream>
+#include <ctime>
 
 template <typename T, template <typename, typename> class C>
 class PmergeMe {
 	private:
 		int _size;
 		int _odd;
+		clock_t _start;
 		C<std::pair<T, T>, std::allocator<std::pair<T, T> > > _data;
 
 	public:
@@ -28,8 +30,10 @@ class PmergeMe {
 		PmergeMe(const PmergeMe &other);
 		PmergeMe &operator=(const PmergeMe &other);
 
-		void sort();
-		void printPair(const C<std::pair<T, T>, std::allocator<std::pair<T, T> > > &data) const;
+		void sort(char c);
+		PmergeMe<T, C> merge(const PmergeMe<T, C> &first, const PmergeMe<T, C> &second);
+    	PmergeMe<T, C> sortedPairs(const C<std::pair<T, T>, std::allocator<std::pair<T, T> > > &data);
+		void insertion(C<T, std::allocator<T> > &sorted, T value);
 };
 
 #include "PmergeMe.tpp"

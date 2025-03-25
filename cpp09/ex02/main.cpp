@@ -8,8 +8,8 @@ int main (int ac, char **av) {
 	try {
 		PmergeMe<int, std::vector> pmv(av + 1, ac - 1);
 		PmergeMe<int, std::deque> pmd(av + 1, ac - 1);
-		pmv.sort();
-		pmd.sort();
+		pmv.sort('v');
+		pmd.sort('d');
 	} catch (std::exception & e) {
 		std::cerr << e.what() << std::endl;
 		return 1;
