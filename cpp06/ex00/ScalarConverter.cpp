@@ -64,13 +64,15 @@ void convertInt(std::string const &input) {
 
 	std::cout << "INT_CONVERT" << std::endl;
 	std::cout << "char: ";
-	if (std::isprint(convert))
+	if (input[0] == '-')
+		std::cout << "impossible" << std::endl;
+	else if (convert >= 32 && convert <= 126)
 		std::cout << "'" << static_cast<char>(convert) << "'" << std::endl;
 	else
 		std::cout << "Non displayable" << std::endl;
 	std::cout << "int: " << convert << std::endl;
-	std::cout << "float: " << static_cast<float>(convert) << ".0f" << std::endl;
-	std::cout << "double: " << static_cast<double>(convert) << ".0" << std::endl;
+	std::cout << std::fixed << std::setprecision(5) << "float: " << static_cast<float>(convert) << "f" << std::endl;
+	std::cout << std::fixed << std::setprecision(5) << "double: " << convert << std::endl;
 }
 
 void convertFloat(std::string const &input) {
@@ -78,7 +80,9 @@ void convertFloat(std::string const &input) {
 
 	std::cout << "FLOAT_CONVERT" << std::endl;
 	std::cout << "char: ";
-	if (std::isprint(convert))
+	if (input[0] == '-')
+		std::cout << "impossible" << std::endl;
+	else if (convert >= 32 && convert <= 126)
 		std::cout << "'" << static_cast<char>(convert) << "'" << std::endl;
 	else
 		std::cout << "Non displayable" << std::endl;
@@ -92,13 +96,15 @@ void convertDouble(std::string const &input) {
 
 	std::cout << "DOUBLE_CONVERT" << std::endl;
 	std::cout << "char: ";
-	if (std::isprint(convert))
+	if (input[0] == '-')
+		std::cout << "impossible" << std::endl;
+	else if (convert >= 32 && convert <= 126)
 		std::cout << "'" << static_cast<char>(convert) << "'" << std::endl;
 	else
 		std::cout << "Non displayable" << std::endl;
 	std::cout << "int: " << static_cast<int>(convert) << std::endl;
-	std::cout << "float: " << static_cast<float>(convert) << "f" << std::endl;
-	std::cout << "double: " << convert << std::endl;
+	std::cout << std::fixed << std::setprecision(5) << "float: " << static_cast<float>(convert) << "f" << std::endl;
+	std::cout << std::fixed << std::setprecision(5) << "double: " << convert << std::endl;
 }
 
 void convertSpecial(std::string const &input) {
@@ -118,6 +124,13 @@ void convertSpecial(std::string const &input) {
 
 void ScalarConverter::convert(std::string const &input) {
 	int convert = searchConversion(input);
+
+	double num = std::atol(input.c_str());
+
+	if (num >= 2147483647 || num <= -2147483648) {
+		std::cerr << "Error: Overflow" << std::endl;
+		return;
+	}
 
 	switch (convert) {
 		case 0:
