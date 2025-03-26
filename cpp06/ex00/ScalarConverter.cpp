@@ -50,13 +50,13 @@ void convertChar(std::string const &input) {
 	char convert = input[0];
 
 	std::cout << "char: ";
-	if (std::isprint(convert))
+	if (convert >= 32 && convert <= 126)
 		std::cout << "'" << convert << "'" << std::endl;
 	else
 		std::cout << "Non displayable" << std::endl;
 	std::cout << "int: " << static_cast<int>(convert) << std::endl;
-	std::cout << "float: " << static_cast<float>(convert) << ".0f" << std::endl;
-	std::cout << "double: " << static_cast<double>(convert) << ".0" << std::endl;
+	std::cout << std::fixed << std::setprecision(1) << "float: " << static_cast<float>(convert) << "f" << std::endl;
+	std::cout << std::fixed << std::setprecision(1) << "double: " << static_cast<double>(convert) << std::endl;
 }
 
 void convertInt(std::string const &input) {
@@ -70,9 +70,9 @@ void convertInt(std::string const &input) {
 		std::cout << "'" << static_cast<char>(convert) << "'" << std::endl;
 	else
 		std::cout << "Non displayable" << std::endl;
-	std::cout << "int: " << convert << std::endl;
-	std::cout << std::fixed << std::setprecision(5) << "float: " << static_cast<float>(convert) << "f" << std::endl;
-	std::cout << std::fixed << std::setprecision(5) << "double: " << convert << std::endl;
+	std::cout << "int: " << static_cast<int>(convert) << std::endl;
+	std::cout << std::fixed << std::setprecision(1) << "float: " << static_cast<float>(convert) << "f" << std::endl;
+	std::cout << std::fixed << std::setprecision(1) << "double: " << static_cast<double>(convert) << std::endl;
 }
 
 void convertFloat(std::string const &input) {
@@ -87,8 +87,8 @@ void convertFloat(std::string const &input) {
 	else
 		std::cout << "Non displayable" << std::endl;
 	std::cout << "int: " << static_cast<int>(convert) << std::endl;
-	std::cout << "float: " << convert << "f" << std::endl;
-	std::cout << "double: " << static_cast<double>(convert) << std::endl;
+	std::cout << std::fixed << std::setprecision(1) << "float: " << static_cast<float>(convert) << "f" << std::endl;
+	std::cout << std::fixed << std::setprecision(1) << "double: " << static_cast<double>(convert) << std::endl;
 }
 
 void convertDouble(std::string const &input) {
@@ -103,8 +103,8 @@ void convertDouble(std::string const &input) {
 	else
 		std::cout << "Non displayable" << std::endl;
 	std::cout << "int: " << static_cast<int>(convert) << std::endl;
-	std::cout << std::fixed << std::setprecision(5) << "float: " << static_cast<float>(convert) << "f" << std::endl;
-	std::cout << std::fixed << std::setprecision(5) << "double: " << convert << std::endl;
+	std::cout << std::fixed << std::setprecision(1) << "float: " << static_cast<float>(convert) << "f" << std::endl;
+	std::cout << std::fixed << std::setprecision(1) << "double: " << static_cast<double>(convert) << std::endl;
 }
 
 void convertSpecial(std::string const &input) {
