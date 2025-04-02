@@ -33,6 +33,7 @@ class PmergeMeVector {
 		PmergeMeVector merge(const PmergeMeVector &first, const PmergeMeVector &second);
 		PmergeMeVector sortedPairs(const std::vector<std::pair<int, int> > &data);
 		void insertion(std::vector<int> &sorted, int value);
+		void  printTime(const PmergeMeVector v);
 };
 
 class PmergeMeDeque {
@@ -53,6 +54,7 @@ class PmergeMeDeque {
 		PmergeMeDeque merge(const PmergeMeDeque &first, const PmergeMeDeque &second);
 		PmergeMeDeque sortedPairs(const std::deque<std::pair<int, int> > &data);
 		void insertion(std::deque<int> &sorted, int value);
+		void  printTime(const PmergeMeDeque d);
 };
 
 #endif

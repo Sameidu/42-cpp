@@ -6,7 +6,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <climits>
+#include <limits>
 #include <exception>
 
 class Span {

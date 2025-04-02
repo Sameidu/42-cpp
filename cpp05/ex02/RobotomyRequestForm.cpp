@@ -28,7 +28,6 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
 		throw AForm::FormNotSignedException();
 	std::cout << "*drilling noises* ";
 	srand(time(NULL));
-	printf("%d\n", rand());
 	if (rand() % 2 == 0)
 		std::cout << _target << " has been robotomized successfully" << std::endl;
 	else

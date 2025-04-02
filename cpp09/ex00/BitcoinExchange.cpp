@@ -73,21 +73,27 @@ float BitcoinExchange::getValue(const std::string &line) {
 	return val;
 }
 
-void BitcoinExchange::run(const std::string &file) {
-	std::ifstream infile(file);
+void BitcoinExchange::run(char *av) {
+	std::ifstream infile(av);
 	if (!infile.is_open())
-		throw std::invalid_argument("Cannot open " + file);
+		throw std::invalid_argument("Cannot open file");
 	std::string line;
 	getline(infile, line);
 	while (getline(infile, line)) {
+		if (line.empty())
+			continue;
 		try {
 			std::string key = getKey(line);
 			float value = getValue(line);
 			std::map<std::string, double>::iterator it = _data.lower_bound(key);
 			if (it == _data.end())
 				throw std::invalid_argument("Error: no data for this date.");
-			if (it->first != key)
+			if (it->first != key) {
+				if (it == _data.begin())
+					throw std::invalid_argument("Error: no data for this date.");
 				it--;
+			}
+
 			std::cout << key << "=> " << value << " = " << value * it->second << std::endl;
 
 		} catch (std::exception &e) {

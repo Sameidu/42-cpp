@@ -67,11 +67,6 @@ PmergeMeVector::PmergeMeVector(int ac, char **av) : _size(0), _odd(-1) {
 	
 	_size = v.size();
 
-	// std::set<int> unique_numbers(v.begin(), v.end());
-	// if (unique_numbers.size() != v.size()) {
-	// 	throw std::invalid_argument("Duplicate numbers are not allowed");
-	// }
-
 	if (_size % 2 != 0)
 		_odd = v.back();
 
@@ -79,7 +74,7 @@ PmergeMeVector::PmergeMeVector(int ac, char **av) : _size(0), _odd(-1) {
 	for (size_t i = 0; i < v.size(); i++) {
 		std::cout << v[i] << " ";
 	}
-	std::cout << std::endl << std::endl;
+	std::cout << std::endl;
 
 	for (size_t i = 0; i < v.size(); i += 2) {
 		if (i + 1 >= v.size())
@@ -89,6 +84,11 @@ PmergeMeVector::PmergeMeVector(int ac, char **av) : _size(0), _odd(-1) {
 		else
 			_data.push_back(std::make_pair(v[i + 1], v[i]));
 	}
+}
+
+void  PmergeMeVector::printTime(const PmergeMeVector v) {
+	std::cout << "Time to process a range of " << v._size << " elements with std::vector ";
+	std::cout << std::fixed << std::setprecision(5) << ((v._start / (double)CLOCKS_PER_SEC)) << " us" << std::endl;
 }
 
 void PmergeMeVector::sortv() {
@@ -111,10 +111,7 @@ void PmergeMeVector::sortv() {
 	std::cout << "After sorting: ";
 	for (size_t i = 0; i < sorted.size(); i++)
 		std::cout << sorted[i] << " ";
-	std::cout << std::endl << std::endl;
-
-	std::cout << "Time to process a range of " << _size << " elements with std::vector ";
-	std::cout << std::fixed << std::setprecision(5) << ((_start / (double)CLOCKS_PER_SEC)) << " us" << std::endl;
+	std::cout << std::endl;
 }
 
 PmergeMeVector PmergeMeVector::merge(const PmergeMeVector &first, const PmergeMeVector &second) {
@@ -226,11 +223,6 @@ PmergeMeDeque::PmergeMeDeque(int ac, char **av) : _size(0), _odd(-1) {
 	
 	_size = d.size();
 
-	// std::set<int> unique_numbers(v.begin(), v.end());
-	// if (unique_numbers.size() != v.size()) {
-	// 	throw std::invalid_argument("Duplicate numbers are not allowed");
-	// }
-
 	if (_size % 2 != 0)
 		_odd = d.back();
 
@@ -238,7 +230,7 @@ PmergeMeDeque::PmergeMeDeque(int ac, char **av) : _size(0), _odd(-1) {
 	for (size_t i = 0; i < d.size(); i++) {
 		std::cout << d[i] << " ";
 	}
-	std::cout << std::endl << std::endl;
+	std::cout << std::endl;
 
 	for (size_t i = 0; i < d.size(); i += 2) {
 		if (i + 1 >= d.size())
@@ -248,6 +240,11 @@ PmergeMeDeque::PmergeMeDeque(int ac, char **av) : _size(0), _odd(-1) {
 		else
 			_data.push_back(std::make_pair(d[i + 1], d[i]));
 	}
+}
+
+void  PmergeMeDeque::printTime(const PmergeMeDeque d) {
+	std::cout << "Time to process a range of " << d._size << " elements with std::deque ";
+	std::cout << std::fixed << std::setprecision(5) << ((d._start / (double)CLOCKS_PER_SEC)) << " us" << std::endl;
 }
 
 void PmergeMeDeque::sortd() {
@@ -270,10 +267,7 @@ void PmergeMeDeque::sortd() {
 	std::cout << "After sorting: ";
 	for (size_t i = 0; i < sorted.size(); i++)
 		std::cout << sorted[i] << " ";
-	std::cout << std::endl << std::endl;
-
-	std::cout << "Time to process a range of " << _size << " elements with std::deque ";
-	std::cout << std::fixed << std::setprecision(5) << ((_start / (double)CLOCKS_PER_SEC)) << " us" << std::endl;
+	std::cout << std::endl;
 }
 
 PmergeMeDeque PmergeMeDeque::merge(const PmergeMeDeque &first, const PmergeMeDeque &second) {

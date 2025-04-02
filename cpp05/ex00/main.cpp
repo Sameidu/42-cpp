@@ -14,7 +14,7 @@ int	main() {
 	}
 	
 	try {
-		Bureaucrat Bob("Bob", 2);
+		Bureaucrat Bob("Bob2", 2);
 		std::cout << Bob << std::endl;
 		Bob.gradeIncrement();
 		std::cout << Bob << std::endl;
@@ -27,7 +27,7 @@ int	main() {
 
 	try {
 		int grade = 189;
-		Bureaucrat Bob("Bob", grade);
+		Bureaucrat Bob("Bob3", grade);
 		std::cout << Bob << std::endl;
 	}
 	catch (std::exception &e) {
@@ -36,7 +36,7 @@ int	main() {
 
 	try {
 		int grade = 0;
-		Bureaucrat Bob("Bob", grade);
+		Bureaucrat Bob("Bob4", grade);
 		std::cout << Bob << std::endl;
 	}
 	catch (std::exception &e) {

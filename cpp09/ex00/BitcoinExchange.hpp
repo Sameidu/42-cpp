@@ -24,7 +24,7 @@ class BitcoinExchange {
 		BitcoinExchange(BitcoinExchange const &other);
 		BitcoinExchange &operator=(BitcoinExchange const &other);
 
-		void run(const std::string &file);
+		void run(char *av);
 		std::string setKey(const std::string &line);
 		float setValue(const std::string &line);
 		std::string getKey(const std::string &line);

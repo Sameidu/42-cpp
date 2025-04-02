@@ -50,8 +50,6 @@ int main() {
 	iter(intarr, 5, print<const int>);
 	iter(intarr, 5, print);
 
-	iter((int*)NULL, 9, &print);
-
 	Uwu *uwuarr = new Uwu[5];
 	iter(uwuarr, 5, setN);
 	iter(uwuarr, 5, talk);

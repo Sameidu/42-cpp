@@ -38,6 +38,8 @@ void RPN::checkArg(const std::string &op) {
 			operate(op[i]);
 		}
 	}
+	if (_stack.size() != 1)
+		throw std::invalid_argument("Invalid expression");
 	std::cout << "Result: " << _stack.top() << std::endl;
 }
 

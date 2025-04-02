@@ -10,6 +10,9 @@ int main (int ac, char **av) {
 		v.sortv();
 		PmergeMeDeque d(ac - 1, av + 1);
 		d.sortd();
+
+		v.printTime(v);
+		d.printTime(d);
 	} catch (std::exception & e) {
 		std::cerr << e.what() << std::endl;
 		return 1;
