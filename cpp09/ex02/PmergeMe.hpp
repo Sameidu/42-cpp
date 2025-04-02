@@ -15,27 +15,44 @@
 #include <sstream>
 #include <ctime>
 
-template <typename T, template <typename, typename> class C>
-class PmergeMe {
+class PmergeMeVector {
 	private:
 		int _size;
 		int _odd;
 		clock_t _start;
-		C<std::pair<T, T>, std::allocator<std::pair<T, T> > > _data;
+		std::vector<std::pair<int, int> > _data;
 
 	public:
-		PmergeMe();
-		~PmergeMe();
-		PmergeMe(char **av, int ac);
-		PmergeMe(const PmergeMe &other);
-		PmergeMe &operator=(const PmergeMe &other);
+		PmergeMeVector();
+		~PmergeMeVector();
+		PmergeMeVector(int ac, char **av);
+		PmergeMeVector(const PmergeMeVector &other);
+		PmergeMeVector &operator=(const PmergeMeVector &other);
 
-		void sort(char c);
-		PmergeMe<T, C> merge(const PmergeMe<T, C> &first, const PmergeMe<T, C> &second);
-    	PmergeMe<T, C> sortedPairs(const C<std::pair<T, T>, std::allocator<std::pair<T, T> > > &data);
-		void insertion(C<T, std::allocator<T> > &sorted, T value);
+		void sortv();
+		PmergeMeVector merge(const PmergeMeVector &first, const PmergeMeVector &second);
+		PmergeMeVector sortedPairs(const std::vector<std::pair<int, int> > &data);
+		void insertion(std::vector<int> &sorted, int value);
 };
 
-#include "PmergeMe.tpp"
+class PmergeMeDeque {
+	private:
+		int _size;
+		int _odd;
+		clock_t _start;
+		std::deque<std::pair<int, int> > _data;
+		
+	public:
+		PmergeMeDeque();
+		~PmergeMeDeque();
+		PmergeMeDeque(int ac, char **av);
+		PmergeMeDeque(const PmergeMeDeque &other);
+		PmergeMeDeque &operator=(const PmergeMeDeque &other);
+
+		void sortd();
+		PmergeMeDeque merge(const PmergeMeDeque &first, const PmergeMeDeque &second);
+		PmergeMeDeque sortedPairs(const std::deque<std::pair<int, int> > &data);
+		void insertion(std::deque<int> &sorted, int value);
+};
 
 #endif
