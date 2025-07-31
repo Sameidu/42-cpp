@@ -11,23 +11,25 @@ Harl::~Harl () {
 void Harl::complain ( std::string level ) {
 	int key = 0;
 
-	if ( level == "DEBUG" ) {
+	if ( level == "DEBUG" )
 		key = 1;
-	} else if ( level == "INFO" ) {
+	else if ( level == "INFO" )
 		key = 2;
-	} else if ( level == "WARNING" ) {
+	else if ( level == "WARNING" )
 		key = 3;
-	} else if ( level == "ERROR" ) {
+	else if ( level == "ERROR" )
 		key = 4;
-	}
 
 	switch ( key ) {
 		case 1:
 			debug();
+			// fall through
 		case 2:
 			info();
+			// fall through
 		case 3:
 			warning();
+			// fall through
 		case 4:
 			error();
 			break;

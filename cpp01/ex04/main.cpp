@@ -27,7 +27,9 @@ int main ( int ac, char **av ) {
 		return 1;
 	}
 
-	std::ofstream replaceFile(std::string(av[1]) + ".replace");
+	std::string outFile = std::string(av[1]) + ".replace";
+	std::ofstream replaceFile;
+	replaceFile.open(outFile.c_str());
 	if ( !replaceFile.is_open() ) {
 		std::cerr << "Error: could not open replace file" << std::endl;
 		return 1;
